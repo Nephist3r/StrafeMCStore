@@ -4,7 +4,7 @@ A responsive, golden-themed static store for StrafeMC.
 
 ## Included
 - Rank catalog: Prime, Hero, Deluxe, Supreme, Kraken, Eternal
-- Coin bundles with low pricing
+- StrafeBuck bundles with low pricing
 - Working client-side cart with quantity controls
 - LocalStorage persistence
 - Demo checkout flow
@@ -15,9 +15,9 @@ A responsive, golden-themed static store for StrafeMC.
 Open `index.html` in a browser, or serve the folder with any static web server.
 
 ## Live payments
-The checkout is intentionally a demo. For real purchases, connect the checkout button/form to a payment provider such as Tebex or Stripe and connect successful payments to your Minecraft server's delivery/rank/coin system.
+The checkout is intentionally a demo. For real purchases, connect the checkout button/form to a payment provider such as Tebex or Stripe and connect successful payments to your Minecraft server's delivery/rank/strafeBuck system.
 
-## Coin pricing used
+## StrafeBuck pricing used
 500 — $1.49
 1,500 — $3.49
 3,000 — $6.49

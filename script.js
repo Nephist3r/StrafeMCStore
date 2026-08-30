@@ -7,14 +7,14 @@ const ranks = [
   {id:"eternal",name:"Eternal",price:49.99,icon:"♛",desc:"The ultimate golden StrafeMC rank.",tag:"FEATURED"}
 ];
 
-const strafebucks = [
-  {id:"strafebucks-500",name:"500 StrafeBucks",price:1.49,icon:"●",desc:"A small premium boost for everyday purchases."},
-  {id:"strafebucks-1500",name:"1,500 StrafeBucks",price:3.49,icon:"●",desc:"A modest bundle for regular players."},
-  {id:"strafebucks-3000",name:"3,000 StrafeBucks",price:6.49,icon:"●",desc:"A balanced bundle without flooding your balance.",tag:"POPULAR"},
-  {id:"strafebucks-5000",name:"5,000 StrafeBucks",price:9.99,icon:"●",desc:"A premium-sized bundle for active players.",tag:"BEST VALUE"},
-  {id:"strafebucks-10000",name:"10,000 StrafeBucks",price:17.99,icon:"●",desc:"The largest strafebucks bundle — kept rare by design.",tag:"MAX"}
+const strafeBucks = [
+  {id:"strafeBucks-500",name:"500 StrafeBucks",price:1.49,icon:"●",desc:"A small premium boost for everyday purchases."},
+  {id:"strafeBucks-1500",name:"1,500 StrafeBucks",price:3.49,icon:"●",desc:"A modest bundle for regular players."},
+  {id:"strafeBucks-3000",name:"3,000 StrafeBucks",price:6.49,icon:"●",desc:"A balanced bundle without flooding your balance.",tag:"POPULAR"},
+  {id:"strafeBucks-5000",name:"5,000 StrafeBucks",price:9.99,icon:"●",desc:"A premium-sized bundle for active players.",tag:"BEST VALUE"},
+  {id:"strafeBucks-10000",name:"10,000 StrafeBucks",price:17.99,icon:"●",desc:"The largest strafeBuck bundle — kept rare by design.",tag:"MAX"}
 ];
-const products=[...ranks,...strafebucks];
+const products=[...ranks,...strafeBucks];
 let cart=JSON.parse(localStorage.getItem("strafemc_cart")||"[]");
 
 const money=n=>`$${n.toFixed(2)}`;
@@ -28,7 +28,7 @@ function renderProducts(list,target){
       <p>${p.desc}</p><button class="btn btn-gold add-product" data-id="${p.id}">Add to cart</button>
     </article>`).join("");
 }
-renderProducts(ranks,"rankGrid"); renderProducts(strafebucks,"strafebucksGrid");
+renderProducts(ranks,"rankGrid"); renderProducts(strafeBucks,"strafeBuckGrid");
 
 function save(){localStorage.setItem("strafemc_cart",JSON.stringify(cart)); renderCart();}
 function add(id){const item=cart.find(x=>x.id===id); item?item.qty++:cart.push({id,qty:1}); save(); openDrawer();}
