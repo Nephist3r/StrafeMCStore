@@ -7,14 +7,14 @@ const ranks = [
   {id:"eternal",name:"Eternal",price:49.99,icon:"♛",desc:"The ultimate golden StrafeMC rank.",tag:"FEATURED"}
 ];
 
-const coins = [
-  {id:"coins-500",name:"500 Coins",price:1.49,icon:"●",desc:"A small premium boost for everyday purchases."},
-  {id:"coins-1500",name:"1,500 Coins",price:3.49,icon:"●",desc:"A modest bundle for regular players."},
-  {id:"coins-3000",name:"3,000 Coins",price:6.49,icon:"●",desc:"A balanced bundle without flooding your balance.",tag:"POPULAR"},
-  {id:"coins-5000",name:"5,000 Coins",price:9.99,icon:"●",desc:"A premium-sized bundle for active players.",tag:"BEST VALUE"},
-  {id:"coins-10000",name:"10,000 Coins",price:17.99,icon:"●",desc:"The largest coin bundle — kept rare by design.",tag:"MAX"}
+const strafebucks = [
+  {id:"strafebucks-500",name:"500 StrafeBucks",price:1.49,icon:"●",desc:"A small premium boost for everyday purchases."},
+  {id:"strafebucks-1500",name:"1,500 StrafeBucks",price:3.49,icon:"●",desc:"A modest bundle for regular players."},
+  {id:"strafebucks-3000",name:"3,000 StrafeBucks",price:6.49,icon:"●",desc:"A balanced bundle without flooding your balance.",tag:"POPULAR"},
+  {id:"strafebucks-5000",name:"5,000 StrafeBucks",price:9.99,icon:"●",desc:"A premium-sized bundle for active players.",tag:"BEST VALUE"},
+  {id:"strafebucks-10000",name:"10,000 StrafeBucks",price:17.99,icon:"●",desc:"The largest strafebucks bundle — kept rare by design.",tag:"MAX"}
 ];
-const products=[...ranks,...coins];
+const products=[...ranks,...strafebucks];
 let cart=JSON.parse(localStorage.getItem("strafemc_cart")||"[]");
 
 const money=n=>`$${n.toFixed(2)}`;
@@ -28,7 +28,7 @@ function renderProducts(list,target){
       <p>${p.desc}</p><button class="btn btn-gold add-product" data-id="${p.id}">Add to cart</button>
     </article>`).join("");
 }
-renderProducts(ranks,"rankGrid"); renderProducts(coins,"coinGrid");
+renderProducts(ranks,"rankGrid"); renderProducts(strafebucks,"strafebucksGrid");
 
 function save(){localStorage.setItem("strafemc_cart",JSON.stringify(cart)); renderCart();}
 function add(id){const item=cart.find(x=>x.id===id); item?item.qty++:cart.push({id,qty:1}); save(); openDrawer();}
